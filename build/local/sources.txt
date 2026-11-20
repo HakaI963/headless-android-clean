@@ -1,0 +1,13 @@
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/DisplaySession.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/Shizuku.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/Automation.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/App.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/Util.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/Prefs.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/MainActivity.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/AppsActivity.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/Core.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/ShellService.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/Mcp.java
+/root/workspace/headless-android-clean/app/src/main/java/com/headless/android/SettingsActivity.java
+/root/workspace/headless-android-clean/build/local/gen/com/headless/android/R.java

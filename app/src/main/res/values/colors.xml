@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FF0B0D12</color>
+    <color name="surface">#FF12161D</color>
+    <color name="raised">#FF1E2530</color>
+    <color name="hairline">#FF242B36</color>
+    <color name="text">#FFEEF1F5</color>
+    <color name="text2">#FFA8B2C0</color>
+    <color name="muted">#FF7B8799</color>
+    <color name="accent">#FFE0A458</color>
+    <color name="on_accent">#FF1A1206</color>
+    <color name="danger">#FFE07066</color>
+    <color name="good">#FF7BAF95</color>
+</resources>
