@@ -352,8 +352,8 @@ final class Mcp {
                     break;
                 }
                 case "ui_status": {
-                    JSONObject reply = Shizuku.get(core.context()).exec(new JSONObject().put("cmd", "info"));
-                    text = reply.toString(2);
+                    if (core == null) throw new IllegalStateException("engine not ready");
+                    text = core.shellInfo().toString(2);
                     break;
                 }
                 case "ui_tree":

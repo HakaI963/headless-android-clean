@@ -71,6 +71,7 @@ final class Core {
 
     private Core(Context context) {
         this.context = context.getApplicationContext();
+        Prefs.migrate(this.context);
         PowerManager.WakeLock lock = null;
         try {
             PowerManager manager = (PowerManager) this.context.getSystemService(Context.POWER_SERVICE);
@@ -174,7 +175,7 @@ final class Core {
         worker.execute(() -> {
             try {
                 DisplaySession session = DisplaySession.create(context, slot.width, slot.height,
-                        slot.width * 2 / 3);
+                        context.getResources().getDisplayMetrics().densityDpi);
                 slot.session = session;
                 slot.displayId = session.displayId;
                 slot.state = "live";
@@ -211,7 +212,7 @@ final class Core {
                     slot.width * 2 / 3);
             slot.session = session;
             slot.displayId = session.displayId;
-            JSONObject reply = Shizuku.get(context).exec(new JSONObject()
+            JSONObject reply = shell(new JSONObject()
                     .put("cmd", "start").put("component", slot.component)
                     .put("display", slot.displayId));
             if (!reply.optBoolean("ok")) {
@@ -226,6 +227,14 @@ final class Core {
                 }
             }
             slot.state = "live";
+            // The app on the virtual display must not steal the controller UI.
+            main.post(() -> {
+                try {
+                    Intent bring = new Intent(context, MainActivity.class);
+                    bring.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    context.startActivity(bring);
+                } catch (Throwable ignored) {}
+            });
         } catch (Throwable e) {
             slot.state = "error";
             slot.error = Util.message(e);
@@ -247,7 +256,7 @@ final class Core {
         synchronized (slots) { slots.remove(slot); }
         worker.execute(() -> {
             try {
-                Shizuku.get(context).exec(new JSONObject().put("cmd", "stop").put("package", slot.pkg));
+                shell(new JSONObject().put("cmd", "stop").put("package", slot.pkg));
             } catch (Throwable ignored) {}
             if (slot.session != null) slot.session.release();
         });
@@ -273,6 +282,19 @@ final class Core {
         catch (Throwable ignored) {}
     }
 
+    JSONObject shellInfo() {
+        try {
+            return shell(new JSONObject().put("cmd", "info"));
+        } catch (Throwable e) {
+            return Util.fail(Util.message(e));
+        }
+    }
+
+    private JSONObject shell(JSONObject command) {
+        if (!Shizuku.get(context).ready()) Shizuku.get(context).refresh();
+        return Shizuku.get(context).exec(command);
+    }
+
     JSONObject input(String cmd, JSONObject args) throws Exception {
         Slot slot = slot(args.optInt("slot", 0));
         if (slot == null || slot.displayId < 0) throw new IllegalArgumentException("slot not running");
@@ -284,7 +306,7 @@ final class Core {
             String key = keys.next();
             if (!"slot".equals(key)) command.put(key, args.get(key));
         }
-        return Shizuku.get(context).exec(command);
+        return shell(command);
     }
 
     JSONObject ui(String op, JSONObject args) throws Exception {
@@ -297,7 +319,7 @@ final class Core {
             if (!"slot".equals(key)) command.put(key, args.get(key));
         }
         command.put("cmd", "ui").put("op", op).put("display", slot.displayId);
-        return Shizuku.get(context).exec(command);
+        return shell(command);
     }
 
     Bitmap frame(int number) {

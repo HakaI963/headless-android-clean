@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Headless Android</string>
-    <string name="tagline">Run apps on private displays</string>
+    <string name="tagline">Private screens for your apps</string>
     <string name="session">Session</string>
-    <string name="shell_state">Shizuku: unknown</string>
-    <string name="endpoint_state">Agent: offline</string>
     <string name="displays">Displays</string>
-    <string name="empty_title">No displays running</string>
-    <string name="empty_body">Launch an installed app to give it a private screen. The original app keeps its data and signature.</string>
-    <string name="add_app">Add app</string>
     <string name="apps">Apps</string>
-    <string name="search">Search</string>
     <string name="settings">Settings</string>
-    <string name="columns">Columns</string>
-    <string name="grant">Grant Shizuku</string>
-    <string name="close">Close</string>
-    <string name="back">Back</string>
-    <string name="home">Home</string>
-    <string name="recents">Recents</string>
-    <string name="shot">Shot</string>
-    <string name="restart">Relaunch</string>
-    <string name="type">Type</string>
-    <string name="record">Record</string>
+    <string name="create_display">Create display</string>
+    <string name="add_app">Add app</string>
+    <string name="grant">Grant</string>
+    <string name="open_shizuku">Open Shizuku</string>
+    <string name="empty">No displays yet. Create one or add an app.</string>
+    <string name="search">Search apps</string>
     <string name="port">MCP port</string>
     <string name="token">Access token</string>
     <string name="save">Save</string>
-    <string name="regen">New token</string>
+    <string name="new_token">New token</string>
+    <string name="columns">Tile columns</string>
+    <string name="back">Back</string>
+    <string name="home">Home</string>
+    <string name="close">Close</string>
     <string name="copy">Copy</string>
-    <string name="no_apps">No matching apps</string>
 </resources>

@@ -41,9 +41,16 @@ final class Prefs {
         get(context).edit().putString("token", Util.hex()).apply();
     }
 
+    static void migrate(Context context) {
+        SharedPreferences prefs = get(context);
+        if (!prefs.getBoolean("layout2", false)) {
+            prefs.edit().putInt("columns", 1).putBoolean("layout2", true).apply();
+        }
+    }
+
     static int columns(Context context) {
-        int value = get(context).getInt("columns", 2);
-        return value < 1 || value > 3 ? 2 : value;
+        int value = get(context).getInt("columns", 1);
+        return value < 1 || value > 3 ? 1 : value;
     }
 
     static void columns(Context context, int value) {

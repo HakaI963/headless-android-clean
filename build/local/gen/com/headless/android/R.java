@@ -9,23 +9,30 @@ package com.headless.android;
 
 public final class R {
   public static final class color {
-    public static final int accent=0x7f010000;
-    public static final int bg=0x7f010001;
-    public static final int danger=0x7f010002;
-    public static final int good=0x7f010003;
-    public static final int hairline=0x7f010004;
-    public static final int muted=0x7f010005;
-    public static final int on_accent=0x7f010006;
-    public static final int raised=0x7f010007;
-    public static final int surface=0x7f010008;
-    public static final int text=0x7f010009;
-    public static final int text2=0x7f01000a;
+    public static final int error=0x7f010000;
+    public static final int on_primary=0x7f010001;
+    public static final int on_secondary_container=0x7f010002;
+    public static final int on_surface=0x7f010003;
+    public static final int on_surface_variant=0x7f010004;
+    public static final int outline=0x7f010005;
+    public static final int primary=0x7f010006;
+    public static final int secondary_container=0x7f010007;
+    public static final int surface_container=0x7f010008;
+    public static final int surface_container_high=0x7f010009;
+    public static final int surface_container_low=0x7f01000a;
+    public static final int surface_container_lowest=0x7f01000b;
   }
   public static final class drawable {
-    public static final int bg_button=0x7f020000;
-    public static final int bg_card=0x7f020001;
-    public static final int bg_primary=0x7f020002;
-    public static final int ic_launcher_foreground=0x7f020003;
+    public static final int bg_button_filled=0x7f020000;
+    public static final int bg_button_tonal=0x7f020001;
+    public static final int bg_card=0x7f020002;
+    public static final int bg_field=0x7f020003;
+    public static final int bg_indicator=0x7f020004;
+    public static final int ic_apps=0x7f020005;
+    public static final int ic_displays=0x7f020006;
+    public static final int ic_launcher_foreground=0x7f020007;
+    public static final int ic_settings=0x7f020008;
+    public static final int ic_stat=0x7f020009;
   }
   public static final class mipmap {
     public static final int ic_launcher=0x7f030000;
@@ -38,29 +45,34 @@ public final class R {
     public static final int close=0x7f040004;
     public static final int columns=0x7f040005;
     public static final int copy=0x7f040006;
-    public static final int displays=0x7f040007;
-    public static final int empty_body=0x7f040008;
-    public static final int empty_title=0x7f040009;
-    public static final int endpoint_state=0x7f04000a;
-    public static final int grant=0x7f04000b;
-    public static final int home=0x7f04000c;
-    public static final int no_apps=0x7f04000d;
+    public static final int create_display=0x7f040007;
+    public static final int displays=0x7f040008;
+    public static final int empty=0x7f040009;
+    public static final int grant=0x7f04000a;
+    public static final int home=0x7f04000b;
+    public static final int new_token=0x7f04000c;
+    public static final int open_shizuku=0x7f04000d;
     public static final int port=0x7f04000e;
-    public static final int recents=0x7f04000f;
-    public static final int record=0x7f040010;
-    public static final int regen=0x7f040011;
-    public static final int restart=0x7f040012;
-    public static final int save=0x7f040013;
-    public static final int search=0x7f040014;
-    public static final int session=0x7f040015;
-    public static final int settings=0x7f040016;
-    public static final int shell_state=0x7f040017;
-    public static final int shot=0x7f040018;
-    public static final int tagline=0x7f040019;
-    public static final int token=0x7f04001a;
-    public static final int type=0x7f04001b;
+    public static final int save=0x7f04000f;
+    public static final int search=0x7f040010;
+    public static final int session=0x7f040011;
+    public static final int settings=0x7f040012;
+    public static final int tagline=0x7f040013;
+    public static final int token=0x7f040014;
   }
   public static final class style {
+    /**
+     * M3 dark baseline with custom primary; platform widgets only.
+     */
     public static final int AppTheme=0x7f050000;
+    public static final int Text_M3_BodyMedium=0x7f050001;
+    public static final int Text_M3_BodySmall=0x7f050002;
+    public static final int Text_M3_LabelSmall=0x7f050003;
+    /**
+     * Material 3 baseline type scale, sizes only; system font, weights 400/500.
+     */
+    public static final int Text_M3_TitleLarge=0x7f050004;
+    public static final int Text_M3_TitleMedium=0x7f050005;
+    public static final int Text_M3_TitleSmall=0x7f050006;
   }
 }

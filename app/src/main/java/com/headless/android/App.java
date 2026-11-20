@@ -26,6 +26,7 @@ public class App extends Application {
         });
         try {
             Core.init(this);
+            HeadlessService.start(this);
         } catch (Throwable e) {
             writeCrash(Thread.currentThread(), e);
         }
