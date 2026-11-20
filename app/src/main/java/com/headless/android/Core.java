@@ -162,6 +162,31 @@ final class Core {
         return -1;
     }
 
+    /** Creates a real virtual display with no app on it — visible proof the system works. */
+    Slot createDisplay() {
+        int number = freeSlot();
+        if (number < 1) return null;
+        int[] screen = screenSize();
+        Slot slot = new Slot(number, "virtual", "Virtual display", "", screen[0], screen[1]);
+        synchronized (slots) { slots.add(slot); }
+        acquireWake();
+        notifyListeners();
+        worker.execute(() -> {
+            try {
+                DisplaySession session = DisplaySession.create(context, slot.width, slot.height,
+                        slot.width * 2 / 3);
+                slot.session = session;
+                slot.displayId = session.displayId;
+                slot.state = "live";
+            } catch (Throwable e) {
+                slot.state = "error";
+                slot.error = Util.message(e);
+            }
+            notifyListeners();
+        });
+        return slot;
+    }
+
     Slot launch(String pkg) {
         AppInfo entry = null;
         for (AppInfo info : apps()) if (info.pkg.equals(pkg)) entry = info;

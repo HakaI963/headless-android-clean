@@ -8,7 +8,8 @@
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/App.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/Util.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/Prefs.class
-/root/workspace/headless-android-clean/build/local/classes/com/headless/android/MainActivity$SlotView.class
+/root/workspace/headless-android-clean/build/local/classes/com/headless/android/MainActivity$1.class
+/root/workspace/headless-android-clean/build/local/classes/com/headless/android/MainActivity$TileView.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/MainActivity.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/Core$Slot.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/Core$AppInfo.class

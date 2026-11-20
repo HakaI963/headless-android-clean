@@ -266,6 +266,7 @@ final class Mcp {
         String[][] names = {
                 {"grid_status", "List running displays"},
                 {"list_apps", "List installed launchable apps"},
+                {"create_display", "Create an empty virtual display"},
                 {"launch_app", "Launch an app on a virtual display"},
                 {"close_app", "Close one display"},
                 {"tap", "Tap a display at normalized x,y"},
@@ -307,6 +308,13 @@ final class Mcp {
                         }
                     }
                     text = array.toString();
+                    break;
+                }
+                case "create_display": {
+                    if (core == null) throw new IllegalStateException("engine not ready");
+                    Core.Slot slot = core.createDisplay();
+                    if (slot == null) throw new IllegalArgumentException("all displays are in use");
+                    text = new JSONObject().put("slot", slot.slot).toString();
                     break;
                 }
                 case "launch_app": {
