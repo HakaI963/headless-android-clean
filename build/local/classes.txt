@@ -23,6 +23,8 @@
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/HeadlessService.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/R$color.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/R$drawable.class
+/root/workspace/headless-android-clean/build/local/classes/com/headless/android/R$id.class
+/root/workspace/headless-android-clean/build/local/classes/com/headless/android/R$layout.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/R$mipmap.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/R$string.class
 /root/workspace/headless-android-clean/build/local/classes/com/headless/android/R$style.class
